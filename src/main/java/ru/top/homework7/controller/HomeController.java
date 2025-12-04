@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,22 +13,24 @@ public class HomeController {
     //Задание 1
     //Создайте endpoint /api/home/greeting, который возвращает строку с приветствием "Welcome to Spring Boot API!"
     @GetMapping("/greeting")
-    public String hi(){
+    public String hi() {
         return "Welcome to Spring Boot API!";
     }
+
     //Задание 2
     //Создайте endpoint /api/home/numbers, который возвращает массив целых чисел от 1 до 10
-    int[] arr={1,2,3,4,5,6,7,8,9,10};
+    int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     @GetMapping("/numbers")
-    public int[] getArr(){
+    public int[] getArr() {
         return arr;
     }
+
     //Задание 3
     //Создайте endpoint /api/home/colors, который возвращает список (List) из 5 названий цветов (на английском или русском)
-    List<String>list=List.of("red","green","blue","yellow","orange");
+    List<String> list = List.of("red", "green", "blue", "yellow", "orange");
 
-//    public HomeController() {
+    //    public HomeController() {
 //        list=new ArrayList<String>();
 //        list.add("red");
 //        list.add("blue");
@@ -37,14 +38,26 @@ public class HomeController {
 //        list.add("yellow");
 //        list.add("orange");
 //    }
-@GetMapping("/colors")
-    public List<String>color(){
+    @GetMapping("/colors")
+    public List<String> color() {
         return list;
     }
+
     //Задание 4
     //Создайте endpoint /api/home/status, который возвращает булевое значение true
+    @GetMapping("/status")
+    public boolean status() {
+        return true;
+    }
     //Задание 5
     //Создайте endpoint /api/home/fruits, который возвращает массив строк с названиями 4-5 фруктов
+
+    String[] fruits = new String[]{"apple", "orange", "banana", "pear", "watermelon"};
+
+    @GetMapping("/fruits")
+    public String[] getFruits() {
+        return fruits;
+    }
     //Задание 6
     //Создайте endpoint /api/home/count, который возвращает целое число 100
     //Задание 7
@@ -55,10 +68,6 @@ public class HomeController {
     //Создайте endpoint /api/home/price, который возвращает дробное число (double) - например, 99.99
     //Задание 10
     //Создайте endpoint /api/home/weekdays, который возвращает массив строк с названиями дней недели (Monday, Tuesday, и т.д.)
-
-
-
-
 
 
 }
